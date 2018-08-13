@@ -1,0 +1,200 @@
+[
+  {
+    "Team": "Richmond",
+    "P": 20,
+    "W": 16,
+    "D": "",
+    "L": 4,
+    "F": 1964,
+    "A": 1406,
+    "Percentage": 139.69,
+    "Total": 64
+  },
+  {
+    "Team": "West Coast",
+    "P": 20,
+    "W": 15,
+    "D": "",
+    "L": 5,
+    "F": 1823,
+    "A": 1477,
+    "Percentage": 123.43,
+    "Total": 60
+  },
+  {
+    "Team": "GWS",
+    "P": 20,
+    "W": 13,
+    "D": 1,
+    "L": 6,
+    "F": 1781,
+    "A": 1479,
+    "Percentage": 120.42,
+    "Total": 54
+  },
+  {
+    "Team": "Hawthorn",
+    "P": 20,
+    "W": 13,
+    "D": "",
+    "L": 7,
+    "F": 1809,
+    "A": 1492,
+    "Percentage": 121.25,
+    "Total": 52
+  },
+  {
+    "Team": "Collingwood",
+    "P": 20,
+    "W": 13,
+    "D": "",
+    "L": 7,
+    "F": 1855,
+    "A": 1568,
+    "Percentage": 118.3,
+    "Total": 52
+  },
+  {
+    "Team": "Sydney",
+    "P": 20,
+    "W": 13,
+    "D": "",
+    "L": 7,
+    "F": 1668,
+    "A": 1521,
+    "Percentage": 109.66,
+    "Total": 52
+  },
+  {
+    "Team": "Melbourne",
+    "P": 20,
+    "W": 12,
+    "D": "",
+    "L": 8,
+    "F": 2089,
+    "A": 1601,
+    "Percentage": 130.48,
+    "Total": 48
+  },
+  {
+    "Team": "Port Adelaide",
+    "P": 20,
+    "W": 12,
+    "D": "",
+    "L": 8,
+    "F": 1627,
+    "A": 1428,
+    "Percentage": 113.94,
+    "Total": 48
+  },
+  {
+    "Team": "Geelong",
+    "P": 20,
+    "W": 11,
+    "D": "",
+    "L": 9,
+    "F": 1745,
+    "A": 1489,
+    "Percentage": 117.19,
+    "Total": 44
+  },
+  {
+    "Team": "Nth Melbourne",
+    "P": 20,
+    "W": 11,
+    "D": "",
+    "L": 9,
+    "F": 1756,
+    "A": 1610,
+    "Percentage": 109.07,
+    "Total": 44
+  },
+  {
+    "Team": "Essendon",
+    "P": 20,
+    "W": 11,
+    "D": "",
+    "L": 9,
+    "F": 1748,
+    "A": 1668,
+    "Percentage": 104.8,
+    "Total": 44
+  },
+  {
+    "Team": "Adelaide",
+    "P": 20,
+    "W": 10,
+    "D": "",
+    "L": 10,
+    "F": 1690,
+    "A": 1727,
+    "Percentage": 97.86,
+    "Total": 40
+  },
+  {
+    "Team": "Fremantle",
+    "P": 20,
+    "W": 8,
+    "D": "",
+    "L": 12,
+    "F": 1464,
+    "A": 1807,
+    "Percentage": 81.02,
+    "Total": 32
+  },
+  {
+    "Team": "Western Bulldogs",
+    "P": 20,
+    "W": 7,
+    "D": "",
+    "L": 13,
+    "F": 1414,
+    "A": 1890,
+    "Percentage": 74.81,
+    "Total": 28
+  },
+  {
+    "Team": "St Kilda",
+    "P": 20,
+    "W": 4,
+    "D": 1,
+    "L": 15,
+    "F": 1436,
+    "A": 1928,
+    "Percentage": 74.48,
+    "Total": 18
+  },
+  {
+    "Team": "Brisbane",
+    "P": 20,
+    "W": 4,
+    "D": "",
+    "L": 16,
+    "F": 1675,
+    "A": 1877,
+    "Percentage": 89.24,
+    "Total": 16
+  },
+  {
+    "Team": "Gold Coast",
+    "P": 20,
+    "W": 4,
+    "D": "",
+    "L": 16,
+    "F": 1194,
+    "A": 1962,
+    "Percentage": 60.86,
+    "Total": 16
+  },
+  {
+    "Team": "Carlton",
+    "P": 20,
+    "W": 2,
+    "D": "",
+    "L": 18,
+    "F": 1243,
+    "A": 2051,
+    "Percentage": 60.6,
+    "Total": 8
+  }
+]
