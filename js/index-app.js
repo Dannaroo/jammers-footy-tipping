@@ -36,6 +36,6 @@ const xhr = new XMLHttpRequest();
         }
       }
     };
-    xhr.open('GET', '../json/main.json');
+    xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
     xhr.send();
     console.log(main);

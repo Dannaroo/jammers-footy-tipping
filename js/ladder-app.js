@@ -52,5 +52,5 @@ const xhr = new XMLHttpRequest();
         }
       }
     };
-    xhr.open('GET', '../json/ladderjson.json');
+    xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/ladderjson.json');
     xhr.send();
