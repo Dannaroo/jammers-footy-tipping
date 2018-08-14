@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
-    <title>Jammers Footy Tipping<</title>
+    <title>Jammers Footy Tipping</title>
   </head>
   <body>
     <div class="wrapper">
@@ -27,51 +27,127 @@
   		  </li>
   		</ul>
   		<div class="container">
-        <h1 class="display-4 text-center text-muted">Round 22</h1>
-        <div id="round" class="mb-5">
-          <ul>
-            <li>Richmond</li>
-            <li>Essendon</li>
-          </ul>
-          <ul>
-            <li>Collingwood</li>
-            <li>Port Adelaide</li>
-          </ul>
-          <ul>
-            <li>Geelong</li>
-            <li>Fremantle</li>
-          </ul>
-          <ul>
-            <li>GWS</li>
-            <li>Sydney</li>
-          </ul>
-          <ul>
-            <li>Gold Coast</li>
-            <li>Brisbane</li>
-          </ul>
-          <ul>
-            <li>St Kilda</li>
-            <li>Hawthorn</li>
-          </ul>
-          <ul>
-            <li>Carlton</li>
-            <li>Western Bulldogs</li>
-          </ul>
-          <ul>
-            <li>West Coast</li>
-            <li>Melbourne</li>
-          </ul>
-          <ul>
-            <li>Adelaide</li>
-            <li>North Melbourne</li>
-          </ul>
-        </div><!-- /Round -->
-        <p>
-          Email me here
-          granett@westnet.com.au
-        </p>
-        <a href="index.html">Back to Tipping Page</a>
-  	  </div><!-- /Container -->
+        <div class="row">
+          <div class="col-lg" id="round">
+            <h1 class="display-5 text-center text-muted">Round 22</h1>
+              <ul class="games">
+                <li>Richmond</li>
+                <li>Essendon</li>
+              </ul>
+              <ul class="games">
+                <li>Collingwood</li>
+                <li>Port Adelaide</li>
+              </ul>
+              <ul class="games">
+                <li>Geelong</li>
+                <li>Fremantle</li>
+              </ul>
+              <ul class="games">
+                <li>GWS</li>
+                <li>Sydney</li>
+              </ul>
+              <ul class="games">
+                <li>Gold Coast</li>
+                <li>Brisbane</li>
+              </ul>
+              <ul class="games">
+                <li>St Kilda</li>
+                <li>Hawthorn</li>
+              </ul>
+              <ul class="games">
+                <li>Carlton</li>
+                <li>Western Bulldogs</li>
+              </ul>
+              <ul class="games">
+                <li>West Coast</li>
+                <li>Melbourne</li>
+              </ul>
+              <ul class="games">
+                <li>Adelaide</li>
+                <li>North Melbourne</li>
+              </ul>
+          </div><!-- /Column1 -->
+          <div class="col-lg">
+            <form>
+              <h3 class="display-5 text-center text-muted">Tipping Sheet</h1>
+              <div class="form-group form-row">
+                <label for="userName">Your Name:</label>
+                <select class="form-control form-control-sm" id="userName" required>
+                  <option></option>
+                  <option>Tom</option>
+                  <option>Dick</option>
+                  <option>Harry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game1">Game One:</label>
+                <select class="form-control form-control-sm tips" id="game1" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game2">Game Two:</label>
+                <select class="form-control form-control-sm tips" id="game2" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game3">Game Three:</label>
+                <select class="form-control form-control-sm tips" id="game3" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game4">Game Four:</label>
+                <select class="form-control form-control-sm tips" id="game4" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game5">Game Five:</label>
+                <select class="form-control form-control-sm tips" id="game5" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game6">Game Six:</label>
+                <select class="form-control form-control-sm tips" id="game6" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game7">Game Seven:</label>
+                <select class="form-control form-control-sm tips" id="game7" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game8">Game Eight:</label>
+                <select class="form-control form-control-sm tips" id="game8" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="game9">Game Nine:</label>
+                <select class="form-control form-control-sm tips" id="game9" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary mt-2">Submit Your Tips</button>
+              </div>
+            </form>
+          </div><!-- /Column2 -->
+        </div><!-- /Row1 -->
+        <div class="row">
+          <div class="col-md">
+            <p> Having problems with the form or just want to submit your tips the old way?
+              Email me here:
+              granett@westnet.com.au
+            </p>
+          </div><!-- /Column -->
+        </div><!-- /Row2 -->
+      </div><!-- /Container -->
     </div><!-- /Wrapper  -->
     <!-- footer -->
     <footer class="footer">
@@ -103,5 +179,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/tippingform-app.js"></script>
   </body>
 </html>

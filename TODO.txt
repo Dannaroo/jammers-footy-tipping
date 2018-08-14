@@ -1,0 +1,3 @@
+-Countdown Timer to submit tips.
+-clicking on team name adds that team to your tipping sheet.
+-add 'action: URL' and 'method: GET' to form.
