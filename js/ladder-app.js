@@ -5,7 +5,6 @@ const xhr = new XMLHttpRequest();
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           const ladder = JSON.parse(xhr.responseText);
-          console.log(ladder);
           for (let i = 0; i < ladder.length; i += 1) {
           const tableRow = document.createElement('tr');
           const position = document.createElement('td');
