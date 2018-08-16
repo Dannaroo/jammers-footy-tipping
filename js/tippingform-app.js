@@ -1,17 +1,19 @@
 const games = document.querySelectorAll('.games');
-const tips = document.querySelectorAll('.tips');
+const selects = document.querySelectorAll('.selects');
 const userName = document.querySelector('#userName');
 const bowl = document.querySelector('#round');
 const li = round.querySelectorAll('li');
+const tippingSheet = document.querySelector('#tippingSheet');
+const submitYourTips = document.querySelector('#submitYourTips');
 
 //Create form options based on innerHTML of #round
-for(let i = 0; i < tips.length; i += 1) {
+for(let i = 0; i < selects.length; i += 1) {
   const option1 = document.createElement('option');
   const option2 = document.createElement('option');
   option1.innerHTML = games[i].firstElementChild.innerHTML;
   option2.innerHTML = games[i].lastElementChild.innerHTML;
-  tips[i].appendChild(option1);
-  tips[i].appendChild(option2);
+  selects[i].appendChild(option1);
+  selects[i].appendChild(option2);
 }
 
 //create list of userNames in the form from main.json file.
@@ -49,19 +51,52 @@ const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
     xhr.send();
 
+//allow tipping sheet to be automatically filled in based on which team name is clicked.
 bowl.addEventListener('click', () => {
   for(let i = 0; i < li.length; i += 1) {
     if(event.target === li[i]) {
       const team = event.target.innerHTML
-      for(let i = 0; i < tips.length; i += 1) {
-        if (team === tips[i].firstElementChild.nextElementSibling.innerHTML) {
-          tips[i].selectedIndex = 1;
+      for(let i = 0; i < selects.length; i += 1) {
+        if (team === selects[i].firstElementChild.nextElementSibling.innerHTML) {
+          selects[i].selectedIndex = 1;
           event.target.style = "font-weight: 800";
-        } else if (team === tips[i].lastElementChild.innerHTML) {
-          tips[i].selectedIndex = 2;
+          event.target.nextElementSibling.nextElementSibling.style = "font-weight: inherit"
+        } else if (team === selects[i].lastElementChild.innerHTML) {
+          selects[i].selectedIndex = 2;
           event.target.style = "font-weight: 800";
+          event.target.previousElementSibling.previousElementSibling.style = "font-weight: inherit"
         }
       }
     }
   }
 });
+
+//style #round based on which teams are selected from drop down menus in tipping sheet
+tippingSheet.addEventListener('change', () => {
+  for (let i = 0; i < li.length; i += 1) {
+    const team = li[i];
+    const teamHTML = li[i].innerHTML;
+    for (let i = 0; i < selects.length; i += 1) {
+      if (selects[i].options[selects[i].selectedIndex].text === teamHTML) {
+        team.style = "font-weight: 800";
+        if (team === team.parentNode.lastElementChild) {
+          team.previousElementSibling.previousElementSibling.style = "font-weight: inherit";
+        } else if (team === team.parentNode.firstElementChild) {
+            team.nextElementSibling.nextElementSibling.style = "font-weight: inherit";
+        }
+      }
+    }
+  }
+});
+
+// FORM SUBMISSION //
+
+//add the tips to an array object
+// submitYourTips.addEventListener('click', () => {
+//   let tipList = [];
+//   for (let i = 0; i < selects.length; i += 1) {
+//
+//   }
+// 
+//
+// });

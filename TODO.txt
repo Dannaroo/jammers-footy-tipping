@@ -1,7 +1,11 @@
 -Countdown Timer to submit tips.
--clicking on team name adds that team to your tipping sheet.
+-clicking on team name adds that team to your tipping sheet.-DONE
 -add 'action: URL' and 'method: GET' to form.-DONE
 -dynamically add 'Your Name's to form.- DONE
 -form submission adds to a JSON file (this will require back-end)
--on mouseover of team names change cursor type.
--center versus in ul's
+-on mouseover of team names change cursor type.-DONE
+-center versus in ul's - DONE
+-reset font weights of opposing team on team click.- DONE
+-reset font weights of both teams on select empty string.-DONE BY REMOVING 
+THE ABILITY TO SELECT THE EMPTY STRING OPTION
+-expand click area of team names

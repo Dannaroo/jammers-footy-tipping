@@ -25,36 +25,7 @@ body {
   background-color: lightgrey;
 }
 /* End Sticky Footer */
-#round {
-  text-align: center;
-}
 
-#round ul li {
-  list-style: none;
-  display: inline-block;
-  padding: .2rem 0;
-  margin: 1.2rem 0;
-}
-
-#round ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    /* display: flex;
-    justify-content: space-between; */
-
-}
-
-#round ul li:nth-child(2) {
-  margin-left: .3rem;
-  margin-right: .3rem;
-}
-
-/* Adding .vs ::after does not allow js to operate effectively for string comparison */
-/*
-#round ul li:first-child::after {
-  content: " vs.";
-} */
 
 th.sticky-header {
   position: sticky;
@@ -68,23 +39,95 @@ form {
   border-radius: 1rem;
   padding: 1rem;
   margin: 2rem;
+  box-shadow: 0 0 10px grey;
 }
 
 #round {
+  text-align: center;
   border: 1px solid black;
   border-radius: 1rem;
   padding: 1rem;
   margin: 2rem;
   font-size: 1.4rem;
-  box-shadow: 0 0 10px navy;
+  box-shadow: 0 0 10px grey;
 }
 
+
+#round ul li {
+  list-style: none;
+  display: inline-block;
+  padding: .2rem 0;
+  margin: 1.2rem 0;
+
+}
+
+#round ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#round ul+ul {
+  border-top: dotted .05rem grey;
+}
+
+#round ul li:nth-child(2) {
+  margin-left: .3rem;
+  margin-right: .3rem;
+  font-size: .8rem;
+  vertical-align: bottom;
+}
+
+#round ul li:nth-child(1),
+#round ul li:nth-child(3) {
+  cursor: pointer;
+}
+
+
+
+@media(min-width: 768px ) {
+
+  #round ul {
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #round ul li:nth-child(2) {
+    position: absolute;
+    width: 30px;
+    left: 310px;
+  }
+
+}
+
+@media(min-width: 992px ) {
+
+  #round ul {
+    width: auto;
+  }
+
+  #round ul li:nth-child(2) {
+    left: 200px;
+  }
+
+}
+
+@media(min-width: 1200px ) {
+
+  #round ul li:nth-child(2) {
+    left: 250px;
+  }
+}
+/*
 @media(max-width: 414px) {
   #round,
   form {
     margin: 1rem auto;
     font-size: 1rem;
     width: 95%;
-  }
+  } */
 
 }

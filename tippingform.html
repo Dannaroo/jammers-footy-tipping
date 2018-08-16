@@ -28,9 +28,18 @@
   		</ul>
   		<div class="container">
         <div class="row">
+          <div class="col-md">
+            <h1 class="display-4 text-muted text-center">Submit Your Tips</h1>
+            <p> Choose your tips by selecting your name in the Tipping Sheet and then
+              clicking on the team you want to tip or selecting your teams from
+              the drop-down menus.
+            </p>
+          </div><!-- /Column -->
+        </div><!-- /Row1 -->
+        <div class="row">
           <div class="col-lg" id="round">
-            <h1 class="display-5 text-center text-muted">Round 22</h1>
-              <ul class="games">
+            <h1 class="display-5 text-center text-muted mb-lg-5">Round 22</h1>
+              <ul class="games mt-lg-5 pt-lg-4">
                 <li>Richmond</li>
                 <li>vs.</li>
                 <li>Essendon</li>
@@ -77,66 +86,65 @@
               </ul>
           </div><!-- /Column1 -->
           <div class="col-lg">
-            <form method="get">
+            <form method="get" id="tippingSheet">
               <h3 class="display-5 text-center text-muted">Tipping Sheet</h1>
               <div class="form-group form-row">
                 <label for="userName">Your Name:</label>
-                <select class="form-control form-control-sm" id="userName" required>
-                  <option></option>
-
+                <select name:"userName"  class="form-control form-control-sm" id="userName" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game1">Game One:</label>
-                <select class="form-control form-control-sm tips" id="game1" required>
-                  <option></option>
+                <select name:"game1" class="form-control form-control-sm selects" id="game1" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game2">Game Two:</label>
-                <select class="form-control form-control-sm tips" id="game2" required>
-                  <option></option>
+                <select name:"game2" class="form-control form-control-sm selects" id="game2" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game3">Game Three:</label>
-                <select class="form-control form-control-sm tips" id="game3" required>
-                  <option></option>
+                <select name:"game3" class="form-control form-control-sm selects" id="game3" placeholder='hello' required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game4">Game Four:</label>
-                <select class="form-control form-control-sm tips" id="game4" required>
-                  <option></option>
+                <select name:"game4" class="form-control form-control-sm selects" id="game4" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game5">Game Five:</label>
-                <select class="form-control form-control-sm tips" id="game5" required>
-                  <option></option>
+                <select name:"game5" class="form-control form-control-sm selects" id="game5" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game6">Game Six:</label>
-                <select class="form-control form-control-sm tips" id="game6" required>
-                  <option></option>
+                <select name:"game6" class="form-control form-control-sm selects" id="game6" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game7">Game Seven:</label>
-                <select class="form-control form-control-sm tips" id="game7" required>
-                  <option></option>
+                <select name:"game7" class="form-control form-control-sm selects" id="game7" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game8">Game Eight:</label>
-                <select class="form-control form-control-sm tips" id="game8" required>
-                  <option></option>
+                <select name:"game8" class="form-control form-control-sm selects" id="game8" required>
+                  <option disabled selected></option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="game9">Game Nine:</label>
-                <select class="form-control form-control-sm tips" id="game9" required>
+                <select name:"game9" class="form-control form-control-sm selects" id="game9" required>
                   <option></option>
                 </select>
               </div>
@@ -145,15 +153,14 @@
               </div>
             </form>
           </div><!-- /Column2 -->
-        </div><!-- /Row1 -->
+        </div><!-- /Row2 -->
         <div class="row">
-          <div class="col-md">
+          <div class="col-md text-center">
             <p> Having problems with the form or just want to submit your tips the old way?
-              Email me here:
-              granett@westnet.com.au
+              Email me here: <a href="mailto:grannett@westnet.com.au?Subject=Footy%20Tips" target="_top">granett@westnet.com.au</a>
             </p>
           </div><!-- /Column -->
-        </div><!-- /Row2 -->
+        </div><!-- /Row3 -->
       </div><!-- /Container -->
     </div><!-- /Wrapper  -->
     <!-- footer -->
