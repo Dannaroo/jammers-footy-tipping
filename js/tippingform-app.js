@@ -90,13 +90,23 @@ tippingSheet.addEventListener('change', () => {
 });
 
 // FORM SUBMISSION //
+let tipList = [];
+// add the tips to an array object
+submitYourTips.addEventListener('click', (event) => {
+  event.preventDefault();
+  const tipList = new FormData(tippingSheet);
+  // let tipList = [];
+  //   //split the URL address from the form data.
+  //   formData = location.href.split('?')[1];
+  //   //split the form data into segments
+  //   console.log(formData);
+  //   formData = formData.split('&');
+  //   console.log(formData);
+  //   for( let i = 0; i < formData.length; i += 1 ) {
+  //     const keyValue = formData[i].split('=');
+  //     let tipList = JSON.parse('{ key:value }');
+  //   }
+  console.log(tipList);
+});
 
-//add the tips to an array object
-// submitYourTips.addEventListener('click', () => {
-//   let tipList = [];
-//   for (let i = 0; i < selects.length; i += 1) {
-//
-//   }
-// 
-//
-// });
+console.log(tipList);

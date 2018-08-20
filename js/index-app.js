@@ -9,11 +9,20 @@ const xhr = new XMLHttpRequest();
             const tableRow = document.createElement('tr');
             const position = document.createElement('td');
             position.innerHTML = i + 1;
-            const name = document.createElement('th');
-            name.innerHTML = main[i].name;
-            name.setAttribute('scope', 'row');
+            const person = document.createElement('th');
+            //if user name has (NP) at the end, remove the NP
+            if (main[i].name.indexOf('(') != -1) {
+            const slicedNameIndex = main[i].name.indexOf('(');
+            const slicedName = main[i].name.slice(0, slicedNameIndex);
+            person.innerHTML = slicedName;
+            person.className = "not-paid";
+            //if user name doesnt have (NP), just append the name
+          } else {
+            person.innerHTML = main[i].name;
+          }
+            person.setAttribute('scope', 'row');
             tableRow.appendChild(position);
-            tableRow.appendChild(name);
+            tableRow.appendChild(person);
             //23 is the number of numbers in each object
             for (let n = 1; n <= 23; n += 1) {
               const tableData = document.createElement('td');
