@@ -8,8 +8,8 @@
 -reset font weights of opposing team on team click.- DONE
 -reset font weights of both teams on select empty string.-DONE BY REMOVING 
 THE ABILITY TO SELECT THE EMPTY STRING OPTION
--expand click area of team names
--slice names on main page and add not paid button
+-expand click area of team names- DONE
+-slice names on main page and add not paid button - DONE
 -form submit buttons now passes data as a URL string. work out how to create
 a JS object from this string.
 -move YourName dropdown on mobile devices to be at the top of the #roud div.

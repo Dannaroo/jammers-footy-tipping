@@ -102,6 +102,12 @@ form {
   border-radius: .25rem;
 }
 
+.card {
+  min-width: 15rem;
+  margin-top: 1rem;
+  line-height: 1rem;
+}
+
 @media(min-width: 768px ) {
 
   #round ul {
