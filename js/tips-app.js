@@ -95,7 +95,7 @@ const xhr = new XMLHttpRequest();
         }
       }
     };
-    xhr.open('GET', 'json/tipsjson.json');
+    xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/tipsjson.json');
     xhr.send();
 
     // Create sortForm functionality
