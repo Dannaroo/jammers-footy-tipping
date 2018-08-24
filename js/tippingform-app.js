@@ -1,6 +1,7 @@
 const games = document.querySelectorAll('.games');
 const selects = document.querySelectorAll('.selects');
 const userName = document.querySelector('#userName');
+const formNames = userName.children;
 const bowl = document.querySelector('#round');
 const li = round.querySelectorAll('li');
 const tippingSheet = document.querySelector('#tippingSheet');
@@ -51,8 +52,33 @@ const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
     xhr.send();
 
+//////////////////UNDER CONSTRUCTION///////////////////
+// Sort Form userName's alphabetically
+function sortlist() {
+  var unTexts = new Array();
+  console.log('1');
+  for(let i = 0; i < userName.length; i += 1) {
+    console.log('2');
+    unTexts[i] = userName.options[i].text + ',';
+  }
+
+  unTexts.sort();
+
+  for(let i = 0; i < userName.length; i += 1) {
+      const parts = unTexts[i].split(',');
+      console.log('3');
+      userName.options[i].text = parts[1];
+
+  }
+}
+
+sortlist();
+//////////////////UNDER CONSTRUCTION///////////////////
+
+
+
 //allow tipping sheet to be automatically filled in based on which team name is clicked.
-bowl.addEventListener('click', () => {
+bowl.addEventListener('click', (event) => {
   for(let i = 0; i < li.length; i += 1) {
     if(event.target === li[i]) {
       const team = event.target.innerHTML

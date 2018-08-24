@@ -13,3 +13,9 @@ THE ABILITY TO SELECT THE EMPTY STRING OPTION
 -form submit buttons now passes data as a URL string. work out how to create
 a JS object from this string.
 -move YourName dropdown on mobile devices to be at the top of the #roud div.
+-compare Mobile functionality versus Dads original website.
+-sort tip cards: alphabetically/most/least points/people that tipped (team).
+-add tick/crosses based on success or failure as well as background colors of
+tip cards.-DONE
+-Jammers logo?
+-add clear tips button on tippingform.

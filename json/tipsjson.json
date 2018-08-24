@@ -1,0 +1,50 @@
+[
+  {
+    "name": "RESULT",
+    "gameone": "Richmond",
+    "gametwo": "Collingwood",
+    "gamethree": "Geelong",
+    "gamefour": "Sydney",
+    "gamefive": "Brisbane",
+    "gamesix": "Hawthorn",
+    "gameseven": "Western Bulldogs",
+    "gameeight": "Melbourne",
+    "gamenine": "Adelaide"
+  },
+  {
+    "name": "Barry",
+    "gameone": "Essendon",
+    "gametwo": "Port Adelaide",
+    "gamethree": "Geelong",
+    "gamefour": "Sydney",
+    "gamefive": "Gold Coast",
+    "gamesix": "St Kilda",
+    "gameseven": "Western Bulldogs",
+    "gameeight": "West Coast",
+    "gamenine": "Adelaide"
+  },
+  {
+    "name": "Brad",
+    "gameone": "Richmond",
+    "gametwo": "Collingwood",
+    "gamethree": "Fremantle",
+    "gamefour": "Sydney",
+    "gamefive": "Gold Coast",
+    "gamesix": "Hawthorn",
+    "gameseven": "Carlton",
+    "gameeight": "West Coast",
+    "gamenine": "Adelaide"
+  },
+  {
+    "name": "Garry",
+    "gameone": "Essendon",
+    "gametwo": "Port Adelaide",
+    "gamethree": "Fremantle",
+    "gamefour": "GWS",
+    "gamefive": "Gold Coast",
+    "gamesix": "St Kilda",
+    "gameseven": "Carlton",
+    "gameeight": "Melbourne",
+    "gamenine": "Adelaide"
+  }
+]

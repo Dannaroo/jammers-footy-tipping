@@ -102,10 +102,17 @@ form {
   border-radius: .25rem;
 }
 
-.card {
+.card-deck .card {
   min-width: 15rem;
+  max-width: 17rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   line-height: 1rem;
+}
+
+#searchInput {
+  max-width: 250px;
+  min-width: 150px;
 }
 
 @media(min-width: 768px ) {
