@@ -6,6 +6,7 @@ const bowl = document.querySelector('#round');
 const li = round.querySelectorAll('li');
 const tippingSheet = document.querySelector('#tippingSheet');
 const submitYourTips = document.querySelector('#submitYourTips');
+const clearTipsButton = document.querySelector('#clearTipsButton');
 
 //Create form options based on innerHTML of #round
 for(let i = 0; i < selects.length; i += 1) {
@@ -16,6 +17,31 @@ for(let i = 0; i < selects.length; i += 1) {
   selects[i].appendChild(option1);
   selects[i].appendChild(option2);
 }
+
+// Sort Form userName's alphabetically
+function sortList() {
+  //put the player names into an array
+  const unTexts = new Array();
+  for(let i = 1; i < userName.length; i += 1) {
+      //keep the blank select option
+    unTexts[0] = userName.options[0].text;
+    userName.options[0].setAttribute('disabled', true);
+    userName.options[0].setAttribute('selected', true);
+    //log remaining names
+    unTexts[i] = userName.options[i].text;
+  }
+  //sort the array alphabetically
+  unTexts.sort();
+  console.log(unTexts);
+  //relog the alphabetically sorted array names into the select menu
+  for(let i = 1; i < unTexts.length; i += 1) {
+      const parts = unTexts[i].split(',');
+      console.log(parts);
+      userName.options[i].text = parts[0];
+
+  }
+}
+
 
 //create list of userNames in the form from main.json file.
 //AJAX request
@@ -48,32 +74,10 @@ const xhr = new XMLHttpRequest();
             alert(xhr.statusText);
         }
       }
+      sortList();
     };
     xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
     xhr.send();
-
-//////////////////UNDER CONSTRUCTION///////////////////
-// Sort Form userName's alphabetically
-function sortlist() {
-  var unTexts = new Array();
-  console.log('1');
-  for(let i = 0; i < userName.length; i += 1) {
-    console.log('2');
-    unTexts[i] = userName.options[i].text + ',';
-  }
-
-  unTexts.sort();
-
-  for(let i = 0; i < userName.length; i += 1) {
-      const parts = unTexts[i].split(',');
-      console.log('3');
-      userName.options[i].text = parts[1];
-
-  }
-}
-
-sortlist();
-//////////////////UNDER CONSTRUCTION///////////////////
 
 
 
@@ -115,10 +119,32 @@ tippingSheet.addEventListener('change', () => {
   }
 });
 
+//clear the tipping sheet of all selected tips
+clearTipsButton.addEventListener('click', (event) => {
+  console.log(event);
+  console.log(event.target);
+  event.preventDefault();
+  for(let i = 0; i < selects.length; i += 1) {
+    if (selects[i].selectedIndex !== 0) {
+      selects[i].selectedIndex = 0;
+      //Remove required attribute so clear button does not cause submit styling error
+      selects[i].removeAttribute('required');
+    }
+  }
+  for(let i = 0; i < li.length; i += 1) {
+    li[i].style = "font-weight: inherit";
+  }
+});
+
 // FORM SUBMISSION //
 let tipList = [];
 // add the tips to an array object
 submitYourTips.addEventListener('click', (event) => {
+  //readd required attribute to selects in case it was removed by clearTipsButton
+  for(let i = 0; i < selects.length; i += 1) {
+      selects[i].setAttribute('required');
+
+  }
   event.preventDefault();
   const tipList = new FormData(tippingSheet);
   // let tipList = [];

@@ -32,13 +32,6 @@
         <h1 class="display-5 text-center text-muted m-2">Round 22</h1>
         <!-- Sort Form -->
         <div class="container" id="sortform">
-          <h5 class="text-center mb-0 mt-4 text-primary">Sort Tips</h5>
-          <div class="mb-4 border border-primary rounded bg-light p-3 shadow flex-md-row text-center justify-content-around">
-            <button class="btn btn-primary m-1 shadow" type="submit" id="alphBnt">Sort A-Z</button>
-            <button class="btn btn-primary m-1 shadow" type="submit" id="reverseAlphBnt">Sort Z-A</button>
-            <button class="btn btn-primary m-1 shadow" type="submit" id="scoreeAscend">Score Ascending</button>
-            <button class="btn btn-primary m-1 shadow" type="submit" id="scoreDescend">Score Descending</button>
-            </div>
             <div class="input-group">
               <label class="sr-only" for="searchInput">Search Names</label>
               <input type="text" class=" m-1 hadow form-control " id="searchInput" placeholder="Search Names">
@@ -46,9 +39,12 @@
                 <button type="submit" class="btn btn-success m-1 shadow" id="searchButton">Search</button>
                 <button class="btn btn-secondary m-1 shadow" type="submit" id="clearButton">Clear Search</button>
               </div>
+              <button class="btn btn-primary m-1 shadow" type="button" id="alphaSortButton">Sort A to Z</button>
+              <button class="btn btn-primary m-1 shadow" type="button" id="scoreSortButton">Sort Low to High</button>
             </div>
-
-
+            <div class="container" >
+              <span id="searchResultMessage" class="text-muted mb-2 pb-2" style="display: none"></span>
+            </div>
         </div>
         <!-- /Sort Form -->
         <div class="card-deck d-flex flex-wrap" id="cardBody">

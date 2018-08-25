@@ -14,8 +14,15 @@ THE ABILITY TO SELECT THE EMPTY STRING OPTION
 a JS object from this string.
 -move YourName dropdown on mobile devices to be at the top of the #roud div.
 -compare Mobile functionality versus Dads original website.
--sort tip cards: alphabetically/most/least points/people that tipped (team).
+-sort tip cards: alphabetically/most/least points/- DONE
+-sort tip cards: people who tipped /team/
 -add tick/crosses based on success or failure as well as background colors of
 tip cards.-DONE
 -Jammers logo?
--add clear tips button on tippingform.
+-add clear tips button on tippingform.- DONE
+-sort leaderboard
+-submit your tips #round to be dynamically created by AJAX.
+-search bar not functioning correctly after sorting a-z hi-lo-FIXED
+-sort A-Z and HI-LO sometimes takes 2 clicks to take effect
+
+
