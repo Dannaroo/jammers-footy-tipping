@@ -32,11 +32,9 @@ function sortList() {
   }
   //sort the array alphabetically
   unTexts.sort();
-  console.log(unTexts);
   //relog the alphabetically sorted array names into the select menu
   for(let i = 1; i < unTexts.length; i += 1) {
       const parts = unTexts[i].split(',');
-      console.log(parts);
       userName.options[i].text = parts[0];
 
   }
@@ -78,6 +76,30 @@ const xhr = new XMLHttpRequest();
     };
     xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
     xhr.send();
+
+    //create list of teams in the #round div from round JSON.
+    //AJAX request
+    let response = [];
+    const xhr1 = new XMLHttpRequest();
+        xhr1.onreadystatechange = function () {
+          if (xhr1.readyState === 4) {
+            if (xhr1.status === 200) {
+              response = JSON.parse(xhr1.responseText);
+              console.log(response);
+            } else if (xhr1.status === 404) {
+                //file not found
+                console.log("error: file not found")
+                alert(xhr1.statusText);
+            } else {
+                //server had a problem
+                console.log("error: server had a problem")
+                alert(xhr1.statusText);
+            }
+          }
+          // function here
+        };
+        xhr1.open('GET', 'json/roundjson.json');
+        xhr1.send();
 
 
 
@@ -121,8 +143,6 @@ tippingSheet.addEventListener('change', () => {
 
 //clear the tipping sheet of all selected tips
 clearTipsButton.addEventListener('click', (event) => {
-  console.log(event);
-  console.log(event.target);
   event.preventDefault();
   for(let i = 0; i < selects.length; i += 1) {
     if (selects[i].selectedIndex !== 0) {
@@ -137,17 +157,17 @@ clearTipsButton.addEventListener('click', (event) => {
 });
 
 // FORM SUBMISSION //
-let tipList = [];
-// add the tips to an array object
-submitYourTips.addEventListener('click', (event) => {
-  //readd required attribute to selects in case it was removed by clearTipsButton
-  for(let i = 0; i < selects.length; i += 1) {
-      selects[i].setAttribute('required');
-
-  }
-  event.preventDefault();
-  const tipList = new FormData(tippingSheet);
-  // let tipList = [];
+// let tipList = [];
+// // add the tips to an array object
+// submitYourTips.addEventListener('click', (event) => {
+//   //readd required attribute to selects in case it was removed by clearTipsButton
+//   for(let i = 0; i < selects.length; i += 1) {
+//       selects[i].setAttribute('required');
+//
+//   }
+//   event.preventDefault();
+//   const tipList = new FormData(tippingSheet);
+//   // let tipList = [];
   //   //split the URL address from the form data.
   //   formData = location.href.split('?')[1];
   //   //split the form data into segments
@@ -158,7 +178,5 @@ submitYourTips.addEventListener('click', (event) => {
   //     const keyValue = formData[i].split('=');
   //     let tipList = JSON.parse('{ key:value }');
   //   }
-  console.log(tipList);
-});
 
-console.log(tipList);
+// });
