@@ -7,16 +7,8 @@ const li = round.querySelectorAll('li');
 const tippingSheet = document.querySelector('#tippingSheet');
 const submitYourTips = document.querySelector('#submitYourTips');
 const clearTipsButton = document.querySelector('#clearTipsButton');
-
-//Create form options based on innerHTML of #round
-for(let i = 0; i < selects.length; i += 1) {
-  const option1 = document.createElement('option');
-  const option2 = document.createElement('option');
-  option1.innerHTML = games[i].firstElementChild.innerHTML;
-  option2.innerHTML = games[i].lastElementChild.innerHTML;
-  selects[i].appendChild(option1);
-  selects[i].appendChild(option2);
-}
+//declare which AFL Round is active so the correct JSON array object is selected
+const aflRound = 1;
 
 // Sort Form userName's alphabetically
 function sortList() {
@@ -44,70 +36,105 @@ function sortList() {
 //create list of userNames in the form from main.json file.
 //AJAX request
 const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          main = JSON.parse(xhr.responseText);
-          //loop through the list of user names
-          for (let i = 0; i < main.length; i += 1) {
-            const person = document.createElement('option');
-            //if user name has (NP) at the end, remove the NP
-            if (main[i].name.indexOf('(') != -1) {
-            const slicedNameIndex = main[i].name.indexOf('(');
-            const slicedName = main[i].name.slice(0, slicedNameIndex);
-            person.innerHTML = slicedName;
-            //if user name doesnt have (NP), just append the name
-          } else {
-            person.innerHTML = main[i].name;
-          }
-            userName.appendChild(person);
-          }
-        } else if (xhr.status === 404) {
-            //file not found
-            console.log("error: file not found")
-            alert(xhr.statusText);
-        } else {
-            //server had a problem
-            console.log("error: server had a problem")
-            alert(xhr.statusText);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      main = JSON.parse(xhr.responseText);
+      //loop through the list of user names
+      for (let i = 0; i < main.length; i += 1) {
+        const person = document.createElement('option');
+        //if user name has (NP) at the end, remove the NP
+        if (main[i].name.indexOf('(') != -1) {
+        const slicedNameIndex = main[i].name.indexOf('(');
+        const slicedName = main[i].name.slice(0, slicedNameIndex);
+        person.innerHTML = slicedName;
+        //if user name doesnt have (NP), just append the name
+      } else {
+        person.innerHTML = main[i].name;
+      }
+        userName.appendChild(person);
+      }
+    } else if (xhr.status === 404) {
+        //file not found
+        console.log("error: file not found")
+        alert(xhr.statusText);
+    } else {
+        //server had a problem
+        console.log("error: server had a problem")
+        alert(xhr.statusText);
+    }
+  }
+  sortList();
+};
+xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
+xhr.send();
+
+//create list of teams in the #round div from round JSON.
+//AJAX request
+let response = [];
+const xhr1 = new XMLHttpRequest();
+xhr1.onreadystatechange = function () {
+
+  //returns the property(read: team) home and away for each game.
+  function createMatchUp(object, a, homeAway ) {
+    const property = "game" + a + homeAway;
+    return object[property];
+  }
+
+  if (xhr1.readyState === 4) {
+    if (xhr1.status === 200) {
+      response = JSON.parse(xhr1.responseText);
+      //select the correct round in the JSON array
+      for(let i = 0; i < response.length; i += 1) {
+        const object = response[i];
+        const round = response[i].Round;
+        if(round === aflRound) {
+          //add round number to title
+            const roundNum = document.createElement('span');
+            roundNum.innerHTML = round;
+            bowl.firstElementChild.appendChild(roundNum);
+            //create match ups
+            for(let a = 0; a < games.length; a += 1) {
+              //'a+1' represents the physical round number not the array interger
+              games[a].firstElementChild.innerHTML = createMatchUp(object, a+1, "Home" );
+              games[a].lastElementChild.innerHTML = createMatchUp(object, a+1, "Away" );
+            }
+
         }
       }
-      sortList();
-    };
-    xhr.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/main.json');
-    xhr.send();
+    } else if (xhr1.status === 404) {
+        //file not found
+        console.log("error: file not found")
+        alert(xhr1.statusText);
+    } else {
+        //server had a problem
+        console.log("error: server had a problem")
+        alert(xhr1.statusText);
+    }
+  }
+};
+xhr1.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/roundjson.json');
+xhr1.send();
 
-    //create list of teams in the #round div from round JSON.
-    //AJAX request
-    let response = [];
-    const xhr1 = new XMLHttpRequest();
-        xhr1.onreadystatechange = function () {
-          if (xhr1.readyState === 4) {
-            if (xhr1.status === 200) {
-              response = JSON.parse(xhr1.responseText);
-              console.log(response);
-            } else if (xhr1.status === 404) {
-                //file not found
-                console.log("error: file not found")
-                alert(xhr1.statusText);
-            } else {
-                //server had a problem
-                console.log("error: server had a problem")
-                alert(xhr1.statusText);
-            }
-          }
-          // function here
-        };
-        xhr1.open('GET', 'json/roundjson.json');
-        xhr1.send();
-
+//allow ajax response to arrive before executing this code
+window.onload = function() {
+  //Create form options based on innerHTML of #round
+  for(let i = 0; i < selects.length; i += 1) {
+    const option1 = document.createElement('option');
+    const option2 = document.createElement('option');
+    option1.innerHTML = games[i].firstElementChild.innerHTML;
+    option2.innerHTML = games[i].lastElementChild.innerHTML;
+    selects[i].appendChild(option1);
+    selects[i].appendChild(option2);
+  }
+}
 
 
 //allow tipping sheet to be automatically filled in based on which team name is clicked.
 bowl.addEventListener('click', (event) => {
   for(let i = 0; i < li.length; i += 1) {
     if(event.target === li[i]) {
-      const team = event.target.innerHTML
+      const team = event.target.innerHTML;
       for(let i = 0; i < selects.length; i += 1) {
         if (team === selects[i].firstElementChild.nextElementSibling.innerHTML) {
           selects[i].selectedIndex = 1;
