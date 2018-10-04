@@ -21,8 +21,10 @@ tip cards.-DONE
 -Jammers logo?
 -add clear tips button on tippingform.- DONE
 -sort leaderboard
--submit your tips #round to be dynamically created by AJAX.
+-submit your tips #round to be dynamically created by AJAX.-DONE
 -search bar not functioning correctly after sorting a-z hi-lo-FIXED
 -sort A-Z and HI-LO sometimes takes 2 clicks to take effect
+-input scores from tips.html to index.html leaderboard.
+-Clicking team names does not highlight them or add them to the tipping sheet.
 
 

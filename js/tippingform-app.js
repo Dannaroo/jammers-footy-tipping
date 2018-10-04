@@ -10,6 +10,22 @@ const clearTipsButton = document.querySelector('#clearTipsButton');
 //declare which AFL Round is active so the correct JSON array object is selected
 const aflRound = 1;
 
+
+//allow ajax response to arrive before executing this code
+function populateSelectsForm() {
+  //Create form options based on innerHTML of #round
+  for(let i = 0; i < selects.length; i += 1) {
+    const option1 = document.createElement('option');
+    const option2 = document.createElement('option');
+    option1.innerHTML = games[i].firstElementChild.innerHTML;
+    option2.innerHTML = games[i].lastElementChild.innerHTML;
+    selects[i].appendChild(option1);
+    selects[i].appendChild(option2);
+
+
+  }
+}
+
 // Sort Form userName's alphabetically
 function sortList() {
   //put the player names into an array
@@ -102,6 +118,7 @@ xhr1.onreadystatechange = function () {
 
         }
       }
+      populateSelectsForm();
     } else if (xhr1.status === 404) {
         //file not found
         console.log("error: file not found")
@@ -116,18 +133,6 @@ xhr1.onreadystatechange = function () {
 xhr1.open('GET', 'https://raw.githubusercontent.com/Dannaroo/jammers-footy-tipping/gh-pages/json/roundjson.json');
 xhr1.send();
 
-//allow ajax response to arrive before executing this code
-window.onload = function() {
-  //Create form options based on innerHTML of #round
-  for(let i = 0; i < selects.length; i += 1) {
-    const option1 = document.createElement('option');
-    const option2 = document.createElement('option');
-    option1.innerHTML = games[i].firstElementChild.innerHTML;
-    option2.innerHTML = games[i].lastElementChild.innerHTML;
-    selects[i].appendChild(option1);
-    selects[i].appendChild(option2);
-  }
-}
 
 
 //allow tipping sheet to be automatically filled in based on which team name is clicked.
